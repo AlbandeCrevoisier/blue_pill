@@ -8,8 +8,8 @@ LD = arm-none-eabi-gcc
 LDFLAGS = -T ld_ram.lds -nostdlib
 LDLIBS = `arm-none-eabi-gcc -print-libgcc-file-name`
 
-SRC = main.c
-OBJS = crt0.o main.o
+SRC = init.c main.c
+OBJS = init.o crt0.o main.o
 
 EXE = main
 
