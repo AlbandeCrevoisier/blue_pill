@@ -13,7 +13,7 @@ OBJS = crt0.o main.o
 
 EXE = main
 
-.PHONY: clean jl
+.PHONY: clean stlink
 
 $(EXE) : $(OBJS)
 
@@ -22,8 +22,8 @@ $(EXE) : $(OBJS)
 %.d : %.c
 	$(CC) $(CFLAGS) -MM -MF $@ -MP $<
 
-jl :
-	JLinkGDBServer -if swd -device "STM32F103C8" -LocalhostOnly
+stlink :
+	sudo openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg
 
 clean :
 	rm -f $(OBJS)
