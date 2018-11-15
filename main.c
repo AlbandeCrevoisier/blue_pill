@@ -1,7 +1,9 @@
+#include "led.h"
+
 int
 main(void)
 {
-	for (;;)
-		;
+	led_init();
+
 	return 0;
 }
