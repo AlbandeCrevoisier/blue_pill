@@ -1,1 +1,9 @@
 Goofing around with a Blue Pill (STM32F103C8T6).
+
+Since this is a bare metal project, I don't want to include any lib. There is,
+however, the issue of register acces, often done with the elegant:
+(* (volatile uint32_t *) 0xXXXXXXXX)
+which requires stdint. It would appear that uint32_t is always defined as an
+unsigned int, on this architecture at least. It may not be standard compliant,
+but I'd rather use a typedef unsigned int uint32_t than include stdint.
+
