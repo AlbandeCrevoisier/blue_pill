@@ -1,7 +1,7 @@
 int
 main(void)
 {
-	for(;;)
+	for (;;)
 		;
 	return 0;
 }
