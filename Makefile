@@ -2,13 +2,13 @@ AS = arm-none-eabi-as
 ASFLAGS = -g -mcpu=cortex-m3
 
 CC = arm-none-eabi-gcc
-CFLAGS = -g -Os -mcpu=cortex-m3 -mthumb -Wall -Wextra -Werror -Wpedantic -std=c89
+CFLAGS = -g -Os -mcpu=cortex-m3 -mthumb -Wall -Wextra -Werror -Wpedantic -std=c89 -ffreestanding
 
 LD = arm-none-eabi-gcc
 LDFLAGS = -T ld_ram.lds -nostdlib
 LDLIBS = `arm-none-eabi-gcc -print-libgcc-file-name`
 
-SRC = init.c main.c
+SRC = main.c
 OBJS = init.o crt0.o main.o
 
 EXE = main
